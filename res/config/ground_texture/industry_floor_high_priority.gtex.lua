@@ -11,7 +11,7 @@ function data()
         priority = 12000
     }
  ]]
- 	-- none
+    -- none LOLLO use this instead of stock
     return {
         texture = tu.makeTextureLinearNearest('res/textures/terrain/material/mat255.tga', true, false, false),
         texSize = {2.0, 2.0},

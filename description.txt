@@ -1,12 +1,6 @@
-[b]This is a mod to get rid of the dirt, which is in the stock game. It also adds new paving options.[/b]
+[b]This mod removes the dirt, which the stock game places along roads, pedestrian connections and stations. It also adds new paving textures.[/b]
 
-[h2]The trouble: you make a country road, a street, a street station or you simply connect something and there is dirt around[/h2]
-With this mod, streets and pedestrian connections will have no or very little dirt around.
-
-[h2]Hint[/h2]
-You may need to build a piece of road for this mod to become effective.
-
-[h2]Road stations[/h2]
-You will need to paint the terrain inside road stations, otherwise they will inherit the terrain they are placed upon.
+[h2]Modular road stations[/h2]
+You will need to paint the terrain inside modular road stations, otherwise they will inherit the terrain they are placed upon.
 
 [b]Thanks to Enzojz for luadump![/b]

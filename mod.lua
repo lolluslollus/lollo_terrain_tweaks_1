@@ -8,7 +8,8 @@ function data()
             description = _('_DESC'),
             tags = {
                 'Asset',
-                'Street'
+                'Paint Tools',
+                'Street',
             },
             authors = {
                 {
