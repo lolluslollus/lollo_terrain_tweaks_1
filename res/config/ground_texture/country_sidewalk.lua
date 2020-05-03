@@ -8,7 +8,7 @@ function data()
 		materialIndexMap = {},
 		priority = 8
     } ]]
-    if require('settings').removeDirt then
+    if require('lollo_terrain_tweaks/settings').removeDirt then
         -- asphalt instead of gravel, gravel instead of dirt
         return {
             texture = tu.makeMaterialIndexTexture('res/textures/terrain/material/country_sidewalk.tga', 'REPEAT', 'REPEAT'),

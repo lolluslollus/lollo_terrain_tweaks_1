@@ -3,7 +3,7 @@ function data()
 		en = {
 			["_DESC"] = "[b]This mod removes the dirt, which the stock game places along roads, pedestrian connections and stations. It also adds new paving textures.[/b]"
 			.. "\n\n"
-			.. "[b]This mod has a settings.lua file you can adjust. It can be true (default) or false.[/b]"
+			.. "[b]This mod has a lollo_terrain_tweaks/settings.lua file you can adjust. It can be true (default) or false.[/b]"
 			.. "\n\n"
 			.. "[h2]Modular road stations[/h2]"
 			.. "\n"

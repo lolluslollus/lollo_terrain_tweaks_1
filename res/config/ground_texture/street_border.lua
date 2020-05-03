@@ -10,7 +10,7 @@ function data()
 		},
 		priority = 5000
     } ]]
-    if require('settings').removeDirt then
+    if require('lollo_terrain_tweaks/settings').removeDirt then
         -- none
         return {
             texture = tu.makeTextureLinearNearest('res/textures/terrain/material/mat255.tga', true, false, false),
