@@ -1,15 +1,14 @@
 function data()
 	return {
 		en = {
-			["_DESC"] = "[b]This mod removes the dirt, which the stock game places along roads, pedestrian connections and stations. It also adds new paving textures.[/b]"
-			.. "\n\n"
-			.. "[b]This mod has a lollo_terrain_tweaks/settings.lua file you can adjust. It can be true (default) or false.[/b]"
-			.. "\n\n"
-			.. "[h2]Modular road stations[/h2]"
-			.. "\n"
-			.. "If the setting \"removeDirt\" is true, you will need to paint the terrain inside modular road stations, otherwise they will inherit the terrain they are placed upon."
-			.. "\n\n"
-			.. "[b]Thanks to Enzojz for luadump![/b]",
+			["_DESC"] = [[
+				[b]This mod removes the dirt, which the stock game places along roads, pedestrian connections and stations. It also adds new paving textures.[/b]
+				[b]Adjust the file res/scripts/lollo_terrain_tweaks/settings.lua to switch the dirt on or off. It can be true (no dirt, default) or false (leave the dirt in place).[/b]
+				[h2]Modular road stations[/h2]
+				To change the ground in a road station or its repaintable entries, press and hold <shift> and apply a \"paint tool\" asset.
+
+				[b]Thanks to Enzojz for luadump![/b]
+			]],
 			["_NAME"] = "Terrain tweaks"
 		},
 	}
