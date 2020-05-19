@@ -14,8 +14,8 @@ return {
 	},
 	description = {
 		name = _("Street connection, repaintable"),
-		description = _("Street connection that can be used as an entrance and exit, repaintable (press and hold <shift> to apply a paint)"),
-		icon = "ui/construction/station/street/platform_entrance_exit_era_a.tga"
+		description = _("Street connection that can be used as an entrance and exit, repaintable. Press and hold <shift> to apply a paint asset."),
+		icon = "ui/construction/station/street/entrance_exit_no_ground.tga"
 	}, 
 	availability = {
 		yearFrom = 0,

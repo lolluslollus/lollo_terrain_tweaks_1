@@ -6,8 +6,8 @@ return {
 		{ forward = true },
 		{ forward = true },
 	},
-	streetWidth = 3.0,
-	sidewalkWidth = 3.0,
+	streetWidth = 5.0, -- LOLLO was 3.0,
+	sidewalkWidth = 2.0, -- LOLLO was 3.0
 	sidewalkHeight = .3, -- was .00,
 	yearFrom = 1925,
 	yearTo = 0,

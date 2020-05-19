@@ -1,3 +1,4 @@
+-- LOLLO NOTE this overrides the stock construction, to allow for prettier one-way streets
 local transf = require "transf"
 local vec3 = require "vec3"
 local modulesutil = require "modulesutil"
@@ -13,42 +14,42 @@ return {
 		categories = { "street access", },
 	},
 	description = {
-		name = _("Street connection, repaintable, no pavement"),
-		description = _("Street connection that can be used as an entrance and exit, repaintable, no pavement. Press and hold <shift> to apply a paint asset."),
-		icon = "ui/construction/station/street/entrance_exit_no_ground_no_sidewalk.tga"
+		name = _("Station exit"),
+		description = _("Street connection that can be used as an exit only."),
+		icon = "ui/construction/station/street/platform_exit.tga"
 	}, 
 	availability = {
 		yearFrom = 0,
 		yearTo = 0
 	},
-	type = "street_terminal_entrance_exit",
+	type = "street_terminal_exit",
 	order = {
-		value = 1,
+		value = 5,
 	},
 	metadata = {
 	},
 	
 	updateFn = function(result, transform, tag, slotId, addModelFn, params)
-		local coordI, coordJ, variant = result.DemangleId(slotId)
+	local coordI, coordJ, variant = result.DemangleId(slotId)
 	
 		local tng = modulesutil.mul(transform, {0.0, -20.0, 0.0, 0.0})
 		table.insert(result.edgeLists, {
 				type = "STREET",
 				params = {
-					type = "street_station/entrance_no_ground_no_sidewalk.lua",
+					type = params.year > 1920 and "street_station/entrance_one_way_new.lua" or "street_station/entrance_one_way_old.lua",
 					tramTrackType = params.tramTrack == 0 and "NO" or params.tramTrack == 1 and "YES" or "ELECTRIC",
 				},
 				edges = {
-					{ modulesutil.mul(transform, {0, 0, 0, 1}), tng },
-					{ modulesutil.mul(transform, {0, -20, 0, 1}), tng },
+					{ modulesutil.mul(transform, {-2.5, 0, 0, 1}), tng },
+					{ modulesutil.mul(transform, {-2.5, -20, 0, 1}), tng },
 				},
 				snapNodes = { 1 }
 		})
 		
 		local a = modulesutil.mul(transform, {-5.0, -10.0, 0.0, 1.0})
 		local b = modulesutil.mul(transform, {-5.0, 5.0, 0.0, 1.0})
-		local c = modulesutil.mul(transform, {5.0, 5.0, 0.0, 1.0})
-		local d = modulesutil.mul(transform, {5.0, -10.0, 0.0, 1.0})
+		local c = modulesutil.mul(transform, {0.0, 5.0, 0.0, 1.0})
+		local d = modulesutil.mul(transform, {0.0, -10.0, 0.0, 1.0})
 		table.insert(result.groundFaces, {  
 				face =  { a, b, c, d },
 				modes = {
@@ -59,9 +60,10 @@ return {
 				}
 		})
 		
-		result.MakeEntrance(addModelFn, coordI, coordJ, variant, true, true)
-	
-		addModelFn("station/road/streetstation/" .. result.erastr .. "entr_cross.mdl", transf.transl(vec3.new(0.0, 5.0, 0.0)))
+		result.MakeEntrance(addModelFn, coordI, coordJ, variant, true, false)
+		
+		addModelFn("station/road/streetstation/" .. result.erastr .. "entr_cross_1w.mdl", transf.transl(vec3.new(-2.5, 5.0, 0.0)))
+		addModelFn("street_station_pedestrian_paths/paths_4_one_way_exits.mdl", {1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1}) -- LOLLO NOTE this is the only change from stock
 	end,
 	
 	getModelsFn = function()

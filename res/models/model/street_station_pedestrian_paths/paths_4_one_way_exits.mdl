@@ -1,0 +1,68 @@
+local idTransf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1}
+local laneutil = require('laneutil')
+
+function data()
+    return {
+        boundingInfo = {
+            bbMax = {0.1, 0.1, 0.1},
+            bbMin = {-0.1, -0.1, 0.0}
+        },
+        --[[         collider = {
+            params = {},
+            transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+            type = 'MESH'
+        }, ]]
+        collider = {
+            type = 'NONE'
+        },
+        lods = {
+            {
+                node = {
+                    transf = idTransf
+                },
+                static = false,
+                visibleFrom = 0,
+                visibleTo = 390
+            }
+        },
+        metadata = {
+            availability = {
+                yearFrom = 0,
+                yearTo = 0
+            },
+            cost = {
+                price = 0
+            },
+            -- autoRemovable = true,
+            skipCollision = true,
+            -- skipCollisionCheck = true
+            transportNetworkProvider = {
+                laneLists = {
+                    -- pedestrians
+                    laneutil.createLanes(
+                        {
+                            -- x is across and grows outwards, y is along growing inwards. They are not centred.
+                            curves = {
+                                ['right_lane'] = {
+                                    {{-6.00000, 0.00000, 0.00000}, {-5.50000, 0.00000, 0.00000}, }
+                                },
+                                ['left_lane'] = {
+                                    {{1.00000, 0.00000, 0.00000}, {0.50000, 0.00000, 0.00000}, }
+                                }
+                            }
+                        },
+                        {'PERSON'},
+                        20,
+                        3,
+                        true --linkable
+                    )
+                },
+                runways = {},
+                terminals = {}
+            }
+        },
+        skipCollision = true,
+        -- skipCollisionCheck = true,
+        version = 1
+    }
+end

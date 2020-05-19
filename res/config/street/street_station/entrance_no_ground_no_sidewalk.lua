@@ -11,7 +11,7 @@ return {
 	speed = 50.0,
 	type = "new medium",
 	name = _("Medium repaintable country road"),
-	desc = _("Two-lane country road with a speed limit of %2%. Press and hold <shift> to apply a paint tool."),
+	desc = _("Two-lane country road with a speed limit of %2%. Press and hold <shift> to apply a paint asset."),
 	categories = { "country" },
 	borderGroundTex = "street_border.lua",
 	materials = {

@@ -5,8 +5,8 @@ return {
 		{ forward = true },
 		{ forward = true },
 	},
-	streetWidth = 3.0,
-	sidewalkWidth = 3.0,
+	streetWidth = 5.0, -- LOLLO was 3.0,
+	sidewalkWidth = 2.0, -- LOLLO was 3.0
 	sidewalkHeight = .3,
 	yearFrom = 1925,
 	yearTo = 0,
@@ -15,7 +15,7 @@ return {
 	speed = 50.0,
 	type = "one way new small",
 	name = _("Small one-way repaintable street"),
-	desc = _("One-lane one-way street with a speed limit of %2%. Press and hold <shift> to apply a paint tool."),
+	desc = _("One-lane one-way repaintable street with a speed limit of %2%. Press and hold <shift> to apply a paint asset."),
 	categories = { "one-way" },
 	borderGroundTex = "street_border.lua",
 	materials = {

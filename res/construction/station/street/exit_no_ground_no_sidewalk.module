@@ -13,9 +13,9 @@ return {
 		categories = { "street access", },
 	},
 	description = {
-		name = _("Station exit, repaintable"),
-		description = _("Street connection that can be used as an exit only, repaintable (press and hold <shift> to apply a paint)."),
-		icon = "ui/construction/station/street/platform_exit.tga"
+		name = _("Station exit, repaintable, no pavement"),
+		description = _("Street connection that can be used as an exit only, repaintable, no pavement. Press and hold <shift> to apply a paint asset."),
+		icon = "ui/construction/station/street/platform_exit_no_ground_no_sidewalk.tga"
 	}, 
 	availability = {
 		yearFrom = 0,
@@ -62,6 +62,7 @@ return {
 		result.MakeEntrance(addModelFn, coordI, coordJ, variant, true, false)
 		
 		addModelFn("station/road/streetstation/" .. result.erastr .. "entr_cross_1w.mdl", transf.transl(vec3.new(-2.5, 5.0, 0.0)))
+		addModelFn("street_station_pedestrian_paths/paths_4_one_way_exits.mdl", {1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1})
 	end,
 	
 	getModelsFn = function()
