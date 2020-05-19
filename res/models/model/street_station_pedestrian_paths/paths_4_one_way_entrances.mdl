@@ -1,3 +1,6 @@
+-- LOLLO NOTE beside offering repaintable connections, one-way and two-way,
+-- we offer prettier and faster one-way connections.
+-- This means, the pavement is now 2m wide instead of 3m. This calls for new pedestrian paths.
 local idTransf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1}
 local laneutil = require('laneutil')
 
@@ -18,19 +21,7 @@ function data()
         lods = {
             {
                 node = {
-                    -- children = {
-                    --     {
-                    --         materials = {'asset/icon/asset_icon_mark.mtl'},
-                    --         mesh = 'asset/icon/lod_0_icon_exclamation_mark.msh',
-                    --         transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1}
-                    --     },
-                    --     {
-                    --         materials = {'asset/icon/asset_icon_mark.mtl'},
-                    --         mesh = 'asset/icon/lod_0_icon_question_mark.msh',
-                    --         transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1}
-                    --     }
-                    -- },
-                    transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1}
+                    transf = idTransf
                 },
                 static = false,
                 visibleFrom = 0,
