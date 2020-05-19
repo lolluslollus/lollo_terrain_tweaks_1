@@ -33,15 +33,13 @@ return {
 		},
 		streetLane = {
 			-- name = "street/new_medium_lane.mtl",
-			name = "street/old_medium_lane.mtl",
 			-- size = { 4.0, 4.0 }
+			name = "street/old_medium_lane.mtl",
 			size = { 12.0, 3.0 }
 		},
 		streetStripe = {
-
 		},
 		streetStripeMedian = {
-
 		},
 		streetBus = {
 			-- name = "street/new_medium_bus.mtl",
@@ -60,8 +58,8 @@ return {
 		},
 		crossingLane = {
 			-- name = "street/new_medium_lane.mtl",
-			name = "street/old_medium_lane.mtl",
 			-- size = { 4.0, 4.0 }
+			name = "street/old_medium_lane.mtl",
 			size = { 12.0, 3.0 }
 		},
 		crossingBus = {

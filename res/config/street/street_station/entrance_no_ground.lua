@@ -22,8 +22,8 @@ return {
 			-- size = { 2.0, .3 }
 		},			
 		streetLane = {
-			-- name = "street/new_medium_lane.mtl",
-			-- size = { 4.0, 4.0 }
+			name = "street/new_medium_lane.mtl",
+			size = { 4.0, 4.0 }
 		},
 		streetStripe = {
 		},
@@ -42,8 +42,8 @@ return {
 			-- size = { 12, 2.7 }
 		},
 		crossingLane = {
-			-- name = "street/new_medium_lane.mtl",
-			-- size = { 4.0, 4.0 }
+			name = "street/new_medium_lane.mtl",
+			size = { 4.0, 4.0 }
 		},
 		crossingBus = {
 		},
