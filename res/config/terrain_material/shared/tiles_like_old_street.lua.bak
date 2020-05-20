@@ -1,0 +1,21 @@
+function data()
+    return {
+        name = _('Tiles like old street'),
+        detailColorTexture = 'terrain/streetstation_perron_base_old_albedo_bc1a.dds',
+        detailMetalGlossAoHTexture = 'terrain/streetstation_perron_base_old_metal_gloss_ao_bc3.dds',
+        detailNormalTexture = 'terrain/streetstation_perron_base_old_normal_bc5.dds',
+
+        -- no, error with MipMaps
+        -- detailColorTexture = 'terrain/old_medium_paving.dds',
+        -- detailMetalGlossAoHTexture = 'terrain/old_medium_paving_metal_gloss_ao.dds',
+        -- detailNormalTexture = 'terrain/old_medium_paving_nrml.dds',
+
+        overlayTexture = 'terrain/overlay_uniform_bc1a.dds',
+        detailSize = 1 / 8, --.025, --1 / 15, -- the smaller the detail size, the larger the tiles will look. 1 / 15 is too small, 1/32 is too large
+        overlaySize = 1.0, --0.05, -- the larger, the thicker the dirt
+        overlayStrength = 0.75, -- the larger, the stronger the overlay
+        --hOffset = 0.3,
+        order = -61,
+        priority = 1000000
+    }
+end

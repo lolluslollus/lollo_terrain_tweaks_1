@@ -1,0 +1,37 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 2.5, 5, 0.31727054715157, },
+		bbMin = { -2.5, -5, -5.5404356658073e-09, },
+	},
+	collider = {
+		params = {
+			halfExtents = { 2.5, 5, 0.15863527357578, },
+		},
+		transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+		type = "BOX",
+	},
+	lods = {
+		{
+			node = {
+				children = {
+					{
+						-- materials = { "station/road/streetstation/streetstation_perron_border.mtl", "station/road/streetstation/streetstation_perron_base_mid.mtl", },
+						materials = {'street/new_medium_sidewalk_border_inner.mtl', 'street/new_medium_sidewalk.mtl'},
+						mesh = "station/road/streetstation/era_b/pltfrm_l_rep_lod0.msh",
+						name = "pltfrm_l_rep",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1.5308020938703e-15, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 1730.3282470703,
+		},
+	},
+	metadata = { },
+	version = 1,
+}
+end
