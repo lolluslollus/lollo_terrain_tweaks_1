@@ -1,3 +1,4 @@
+local modSettings = require('lollo_terrain_tweaks/settings')
 local tu = require 'texutil'
 -- LOLLO this is used along country roads
 function data()
@@ -8,7 +9,7 @@ function data()
 		materialIndexMap = {},
 		priority = 8
     } ]]
-    if require('lollo_terrain_tweaks/settings').removeDirt then
+    if modSettings.get('lolloTerrainTweaks_removeDirt') == 1 then
         -- asphalt instead of gravel, gravel instead of dirt
         return {
             texture = tu.makeMaterialIndexTexture('res/textures/terrain/material/country_sidewalk.tga', 'REPEAT', 'REPEAT'),

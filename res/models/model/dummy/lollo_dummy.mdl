@@ -1,0 +1,43 @@
+local idTransf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1}
+
+function data()
+    return {
+        boundingInfo = {
+            bbMax = {0.1, 0.1, 0.1},
+            bbMin = {-0.1, -0.1, 0.0}
+        },
+        --[[         collider = {
+            params = {},
+            transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+            type = 'MESH'
+        }, ]]
+        collider = {
+            type = 'NONE'
+        },
+        lods = {
+            {
+                node = {
+                    transf = idTransf
+                },
+                static = false,
+                visibleFrom = 0,
+                visibleTo = 390
+            }
+        },
+        metadata = {
+            availability = {
+                yearFrom = 0,
+                yearTo = 0
+            },
+            cost = {
+                price = 0
+            },
+            -- autoRemovable = true,
+            skipCollision = true,
+            -- skipCollisionCheck = true
+        },
+        skipCollision = true,
+        -- skipCollisionCheck = true,
+        version = 1
+    }
+end

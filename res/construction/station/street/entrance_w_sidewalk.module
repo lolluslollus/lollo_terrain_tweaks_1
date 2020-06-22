@@ -14,9 +14,9 @@ return {
 		categories = { "street access", },
 	},
 	description = {
-		name = _("Station entrance"),
-		description = _("Street connection that can be used as an entrance only."),
-		icon = "ui/construction/station/street/platform_entrance.tga"
+		name = _("Station entrance with pavement"),
+		description = _("Street connection with pavement, that can be used as an entrance only."),
+		icon = "ui/construction/station/street/platform_entrance_w_sidewalk.tga"
 	}, 
 	availability = {
 		yearFrom = 0,
@@ -24,7 +24,7 @@ return {
 	},
 	type = "street_terminal_entrance",
 	order = {
-		value = 4,
+		value = 5,
 	},
 	metadata = {
 	},
@@ -36,7 +36,7 @@ return {
 		table.insert(result.edgeLists, {
 				type = "STREET",
 				params = {
-					type = params.year > 1920 and "street_station/entrance_one_way_new.lua" or "street_station/entrance_one_way_old.lua",
+					type = params.year > 1920 and "street_station/entrance_one_way_new_w_sidewalk.lua" or "street_station/entrance_one_way_old_w_sidewalk.lua",
 					tramTrackType = params.tramTrack == 0 and "NO" or params.tramTrack == 1 and "YES" or "ELECTRIC",
 				},
 				edges = {

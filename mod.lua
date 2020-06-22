@@ -1,29 +1,30 @@
+-- local inspect = require('lollo_terrain_tweaks/inspect')
+local modSettings = require('lollo_terrain_tweaks/settings')
 local stringUtils = require('lollo_terrain_tweaks/stringUtils')
-local luadump = require('luadump')
 
-local _addParams = function(params)
-    if type(params) ~= 'table' then return end
+-- local _addParams = function(params)
+--     if type(params) ~= 'table' then return end
 
-    for k, v in pairs(params) do
-        if type(v) == 'table' and v.key == 'pavement' then return end
-    end
+--     for k, v in pairs(params) do
+--         if type(v) == 'table' and v.key == 'pavement' then return end
+--     end
 
-    params[#params +1] = {
-        key = "pavement",
-        name = _("Pavement like street"),
-        values = { _("No"), _("Yes")},
-        defaultIndex = 0,
-    }
-end
+--     params[#params +1] = {
+--         key = "pavement",
+--         name = _("Pavement like street"),
+--         values = { _("No"), _("Yes")},
+--         defaultIndex = 0,
+--     }
+-- end
 
 function data()
     return {
         info = {
-            minorVersion = 2,
+            minorVersion = 3,
             severityAdd = 'NONE',
             severityRemove = 'WARNING',
             name = _('_NAME'),
-            description = _('_DESC'),
+            description = stringUtils.getSteamTextWithNoTags(_('_DESC')),
             tags = {
                 'Asset',
                 'Paint Tools',
@@ -34,25 +35,35 @@ function data()
                     name = 'Lollus',
                     role = 'CREATOR'
                 }
-            }
+            },
+            params = {
+                {
+                    key = "lolloTerrainTweaks_removeDirt",
+                    name = _("REMOVE_DIRT"),
+                    values = { _("No"), _("Yes"), },
+                    defaultIndex = 1,
+                },
+            },
         },
-        -- runFn = function(settings)
-        --     addModifier(
-        --         'loadConstruction',
-        --         function(fileName, data)
-        --             if not stringUtils.stringContains(fileName, 'station/street/modular_terminal.con') then return data end
-        --             -- if type(data) ~= 'table' or type(data.params) ~= 'table' then return data end
-        --             _addParams(data.params)
-        --             print('LOLLO tweaked data.params, data.id = ')
-        --             luadump(true)(data.id)
-        --             print('LOLLO tweaked data.params, data.params.id = ')
-        --             luadump(true)(data.params.id)
-        --             print('LOLLO tweaked data.params, data = ')
-        --             luadump(true)(data)
-        --             -- luadump(true)(data)
-        --             return data
-        --         end
-        --     )
-        -- end
+        runFn = function(settings, modParams)
+            local modParams = modParams[getCurrentModId()]
+            if modParams and modParams.lolloTerrainTweaks_removeDirt then
+                modSettings.set('lolloTerrainTweaks_removeDirt', modParams.lolloTerrainTweaks_removeDirt)
+            end
+
+            -- fix sequence in road station config UI
+            addModifier(
+                'loadModule',
+                function(fileName, data)
+                    if stringUtils.stringEndsWith(fileName, '/station/street/exit.module') then
+                        -- print('LOLLO data = ', inspect(data))
+                        if type(data) == 'table' and type(data.order) == 'table' then
+                            data.order.value = 8
+                        end
+                    end
+                    return data
+                end
+            )
+        end
     }
 end

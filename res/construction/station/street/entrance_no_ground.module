@@ -23,7 +23,7 @@ return {
 	},
 	type = "street_terminal_entrance",
 	order = {
-		value = 4,
+		value = 6,
 	},
 	metadata = {
 	},

@@ -1,3 +1,4 @@
+local modSettings = require('lollo_terrain_tweaks/settings')
 local tu = require 'texutil'
 -- LOLLO this is used along streets, country roads, road stations and rail stations
 function data()
@@ -10,7 +11,7 @@ function data()
 		},
 		priority = 5000
     } ]]
-    if require('lollo_terrain_tweaks/settings').removeDirt then
+    if modSettings.get('lolloTerrainTweaks_removeDirt') == 1 then
         -- none
         return {
             texture = tu.makeTextureLinearNearest('res/textures/terrain/material/mat255.tga', true, false, false),
