@@ -5,7 +5,6 @@ function data()
 				[h2]This mod improves the looks of the terrain.[/h2]
 				- It removes the dirt, which the stock game places along roads, pedestrian connections and stations.
 				- It adds new paving textures.
-				- It adjusts the road station one-way entrances.
 				- It adds repaintable road station entrances.
 				[h2]Dirt[/h2]
 				Adjust the parameter \"Remove dirt\" to switch the dirt on or off. It can be true (no dirt, default) or false (leave the standard dirt in place).
