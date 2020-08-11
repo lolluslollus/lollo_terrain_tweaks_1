@@ -10,6 +10,8 @@
         "addModifier",
         "_",
         "game",
-        "getCurrentModId"
+        "getCurrentModId",
+        "api",
+        "debugPrint"
     ]
 }

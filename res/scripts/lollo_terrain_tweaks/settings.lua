@@ -1,25 +1,47 @@
 -- return {
---     lolloTerrainTweaks_removeDirt = true
+--     lolloTerrainTweaks_removeDirt = 1
 -- }
 
 local results = {}
 
-results.get = function(fieldName)
-    if type(game) == 'table' and type(game._lolloTerrainTweaks) == 'table' then
-        return game._lolloTerrainTweaks[fieldName]
-    else
-        return nil
-    end
+local function _getModSettings1()
+    if type(game) ~= 'table' or type(game.config) ~= 'table' then return nil end
+    return game.config._lolloTerrainTweaks
 end
 
-results.set = function(fieldName, fieldValue)
-    if type(game) ~= 'table' then return end
+local function _getModSettings2()
+    if type(api) ~= 'table' or type(api.res) ~= 'table' or type(api.res.getBaseConfig) ~= 'table' then return end
 
-    if type(game._lolloTerrainTweaks) ~= 'table' then
-        game._lolloTerrainTweaks = {}
+    local baseConfig = api.res.getBaseConfig()
+    if not(baseConfig) then return end
+
+    return baseConfig._lolloTerrainTweaks
+end
+
+results.get = function(fieldName)
+    local modSettings = _getModSettings1() or _getModSettings2()
+    if not(modSettings) then
+        print('LOLLO terrain tweaks cannot read modSettings')
+        return nil
     end
 
-    game._lolloTerrainTweaks[fieldName] = fieldValue
+    return modSettings[fieldName]
+end
+
+results.setModParamsFromRunFn = function(thisModParams)
+    -- LOLLO NOTE if default values are set, modParams in runFn will be an empty table,
+    -- so thisModParams here will be nil
+    if type(game) ~= 'table' or type(game.config) ~= 'table' then return end
+
+    if type(game.config._lolloTerrainTweaks) ~= 'table' then
+        game.config._lolloTerrainTweaks = {}
+    end
+
+    if type(thisModParams) == 'table' and thisModParams.lolloTerrainTweaks_removeDirt == 0 then
+        game.config._lolloTerrainTweaks.lolloTerrainTweaks_removeDirt = 0
+    else
+        game.config._lolloTerrainTweaks.lolloTerrainTweaks_removeDirt = 1
+    end
 end
 
 return results
