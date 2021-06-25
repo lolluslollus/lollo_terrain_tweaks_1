@@ -6,7 +6,7 @@ return {
 	sidewalkHeight = .3,
 	yearFrom = 1925,
 	yearTo = 0,
-	upgrade = true,
+	aiLock = true,
 	country = false,
 	speed = 50.0,
 	type = "new medium",

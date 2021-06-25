@@ -11,7 +11,7 @@ return {
 	sidewalkHeight = .3, -- was .00,
 	yearFrom = 0,
 	yearTo = 1925,
-	upgrade = true,
+	aiLock = true,
 	country = false,
 	speed = 40.0, -- was 30.0,
 	type = "one way new small",

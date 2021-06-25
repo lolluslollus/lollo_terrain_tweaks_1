@@ -5,7 +5,7 @@ local stringUtils = require('lollo_terrain_tweaks/stringUtils')
 function data()
     return {
         info = {
-            minorVersion = 4,
+            minorVersion = 5,
             severityAdd = 'NONE',
             severityRemove = 'WARNING',
             name = _('_NAME'),
