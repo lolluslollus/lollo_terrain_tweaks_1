@@ -42,8 +42,7 @@ return {
 		streetStripeMedian = {
 		},
 		streetBus = {
-			-- name = "street/new_medium_bus.mtl",
-			name = "street/old_medium_bus.mtl",
+			name = "street/new_medium_bus.mtl",
 			size = { 12, 2.7 }
 		},
 		streetTram = {
