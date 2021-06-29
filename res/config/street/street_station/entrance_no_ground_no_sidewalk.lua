@@ -7,6 +7,7 @@ return {
 	yearFrom = 1925,
 	yearTo = 0,
 	aiLock = true,
+	visibility = false, -- do not display this street in the menu, unreliable
 	country = false,
 	speed = 50.0,
 	type = "new medium",

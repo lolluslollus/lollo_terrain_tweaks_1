@@ -12,6 +12,7 @@ return {
 	yearFrom = 0,
 	yearTo = 1925,
 	aiLock = true,
+	visibility = false, -- do not display this street in the menu, unreliable
 	country = false,
 	speed = 40.0, -- was 30.0,
 	type = "one way new small",
