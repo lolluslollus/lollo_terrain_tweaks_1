@@ -9,7 +9,7 @@ function data()
 		materialIndexMap = {},
 		priority = 8
     } ]]
-    if modSettings.get('lolloTerrainTweaks_removeDirt') == 1 then
+    if modSettings.getModParams('lolloTerrainTweaks_removeDirt') == 1 then
         -- asphalt instead of gravel, gravel instead of dirt
         return {
             texture = tu.makeMaterialIndexTexture('res/textures/terrain/material/country_sidewalk.tga', 'REPEAT', 'REPEAT'),

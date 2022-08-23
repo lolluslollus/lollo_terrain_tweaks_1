@@ -11,7 +11,7 @@ function data()
 			[255] = 'shared/asphalt_01.lua' -- 255 covers the street station border, 254 does not
         }
     } ]]
-    if modSettings.get('lolloTerrainTweaks_removeDirt') == 1 then
+    if modSettings.getModParams('lolloTerrainTweaks_removeDirt') == 1 then
         -- none
         return {
             texture = tu.makeTextureLinearNearest('res/textures/terrain/material/mat255.tga', true, false, false),

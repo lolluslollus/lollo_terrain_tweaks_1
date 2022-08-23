@@ -11,7 +11,7 @@ function data()
 		},
 		priority = 5000
     } ]]
-    if modSettings.get('lolloTerrainTweaks_removeDirt') == 1 then
+    if modSettings.getModParams('lolloTerrainTweaks_removeDirt') == 1 then
         -- none
         return {
             texture = tu.makeTextureLinearNearest('res/textures/terrain/material/mat255.tga', true, false, false),

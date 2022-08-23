@@ -18,7 +18,7 @@ local function _getModSettings2()
     return baseConfig._lolloTerrainTweaks
 end
 
-results.get = function(fieldName)
+results.getModParams = function(fieldName)
     local modSettings = _getModSettings1() or _getModSettings2()
     if not(modSettings) then
         print('LOLLO terrain tweaks cannot read modSettings')
