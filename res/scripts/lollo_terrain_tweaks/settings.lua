@@ -4,12 +4,12 @@
 
 local results = {}
 
-local function _getModSettings1()
+local function _getModSettingsFromGameConfig()
     if type(game) ~= 'table' or type(game.config) ~= 'table' then return nil end
     return game.config._lolloTerrainTweaks
 end
 
-local function _getModSettings2()
+local function _getModSettingsFromApi()
     if type(api) ~= 'table' or type(api.res) ~= 'table' or type(api.res.getBaseConfig) ~= 'table' then return end
 
     local baseConfig = api.res.getBaseConfig()
@@ -19,7 +19,8 @@ local function _getModSettings2()
 end
 
 results.getModParams = function(fieldName)
-    local modSettings = _getModSettings1() or _getModSettings2()
+    -- LOLLO NOTE try game.config first!
+    local modSettings = _getModSettingsFromGameConfig() or _getModSettingsFromApi()
     if not(modSettings) then
         print('LOLLO terrain tweaks cannot read modSettings')
         return nil
