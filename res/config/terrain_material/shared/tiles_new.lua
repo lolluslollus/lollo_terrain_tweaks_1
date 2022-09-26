@@ -1,7 +1,6 @@
 function data()
     return {
         name = _('New era tiles'),
-        --detailColorTexture = 'terrain/streetstation_perron_base_mid_albedo.dds', -- too small
         --detailColorTexture = 'terrain/hexagon_tiles_albedo.dds',
         --detailColorTexture = 'terrain/streetstation_perron_base_mid_albedo_bc1.dds', -- format no good
         --detailColorTexture = 'terrain/streetstation_perron_base_mid_albedo_bc4.dds', -- format no good
